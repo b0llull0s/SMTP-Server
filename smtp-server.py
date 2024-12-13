@@ -4,7 +4,7 @@ from aiosmtpd.controller import Controller
 
 class CustomHandler:
     async def handle_DATA(self, server, session, envelope):
-        # Print message exactly as you specified
+
         print("---------- MESSAGE FOLLOWS ----------")
         print(envelope.content.decode('utf-8', errors='ignore'))
         print("------------ END MESSAGE ------------")
@@ -17,7 +17,7 @@ def main():
     print("SMTP server started. Waiting for messages...")
     
     try:
-        # Keep the server running
+
         input("Press Enter to stop the server\n")
     except KeyboardInterrupt:
         pass
